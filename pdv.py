@@ -1,0 +1,55 @@
+SistemaAtivo = True
+total = 0
+
+ListaDeCompras = []
+ListadeIdade = []
+
+while SistemaAtivo:
+    while True:
+        valorDaCompra = float(input("Digite o valor da compra:"))
+        if(valorDaCompra < 0):
+            print("Digite um valor valido!")
+        else:
+            break;
+    if(valorDaCompra != 0):
+        while True:
+            idade = int(input("Digite sua idade:"))
+            if(idade <= 0):
+                print("Digite um valor valido")
+            else:
+                break;
+        
+        if idade >= 65:
+            valorDaCompra = valorDaCompra * 0.8
+
+            if valorDaCompra > 100:
+                valorDaCompra = valorDaCompra * 0.9
+
+        print(f"Valor total: R${valorDaCompra}")
+
+        total += valorDaCompra
+
+        ListaDeCompras.append(valorDaCompra)
+        ListadeIdade.append(idade)
+        print("------------------------------------------------")
+    else:
+        SistemaAtivo = False
+
+
+        codigo = 1
+        for i in range(len(ListaDeCompras)):
+            
+            print(f"Codigo de compra:{codigo} | Idade:{ListadeIdade[i]} | Valor:R${ListaDeCompras[i]:.2f}")
+            codigo += 1 
+
+        print(total)
+        
+        
+
+        
+
+
+
+
+        
+
