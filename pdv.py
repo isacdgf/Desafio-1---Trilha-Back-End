@@ -54,10 +54,10 @@ while SistemaAtivo:
             codigo += 1 
 
         print(f"Total de compras:{codigo }")
-        print(f"Total bruto{totalBruto}")
-        print(f"Valor de descontos concedidos{totalDeDesconto}")
+        print(f"Total bruto{totalBruto:.2f}")
+        print(f"Valor de descontos concedidos{totalDeDesconto:.2f}")
         print("------------------------------------------------------")
-        print(f"Valor final com desconto:{totalFinal}")
+        print(f"Valor final com desconto:{totalFinal:.2f}")
 
         
         
