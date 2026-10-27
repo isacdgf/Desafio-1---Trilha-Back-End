@@ -21,19 +21,24 @@ while SistemaAtivo:
                 print("Digite um valor valido!!")
             else:
                 break;
+
+        valorFinalDaCompra = valorDaCompra
         
         if idade >= 65:
             valorFinalDaCompra = valorDaCompra * 0.8
 
-            if valorDaCompra > 100:
-                valorFinalDaCompra = valorFinalDaCompra * 0.9
+        if valorFinalDaCompra > 100:
+            valorFinalDaCompra = valorFinalDaCompra * 0.9
 
 
+
+        descontoDaCompra = valorDaCompra - valorFinalDaCompra
 
         print(f"Valor total: R${valorFinalDaCompra}")
 
-        total += valorDaCompra
-        totalDeDesconto = totalDeDesconto + (valorDaCompra - valorFinalDaCompra)
+        totalFinal += valorFinalDaCompra
+        totalDeDesconto += descontoDaCompra
+       
 
         ListaDeCompras.append(valorFinalDaCompra)
         ListadeIdade.append(idade)
@@ -49,10 +54,10 @@ while SistemaAtivo:
             codigo += 1 
 
         print(f"Total de compras:{codigo }")
-        print(f"Total bruto{total + totalDeDesconto}")
+        print(f"Total bruto{totalBruto}")
         print(f"Valor de descontos concedidos{totalDeDesconto}")
         print("------------------------------------------------------")
-        print(f"Valor final com desconto:{total}")
+        print(f"Valor final com desconto:{totalFinal}")
 
         
         
